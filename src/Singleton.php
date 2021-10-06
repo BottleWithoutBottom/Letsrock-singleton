@@ -14,11 +14,11 @@ class Singleton
         if (!static::preHook()) return false;
 
         $className = static::class;
-        if (!isset(static::$instances[$className])) {
-            static::$instances[$className] = new static;
+        if (!isset(self::$instances[$className])) {
+            self::$instances[$className] = new static;
         }
 
-        return static::$instances[$className];
+        return self::$instances[$className];
     }
 
     /** method to be inherited */
